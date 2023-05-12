@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# for Mastodon 4.0.2
 
 class TranslationService::LingvaTranslate < TranslationService
   def initialize(base_url)
@@ -8,34 +9,24 @@ class TranslationService::LingvaTranslate < TranslationService
   end
 
   def translate(text, source_language, target_language)
-    request(:get, "/api/v1/#{source_language}/#{target_language}/#{text}") do |res|
-      transform_response(res.body_with_limit, source_language)
-    end
-  end
-
-  def languages
-    request(:get, '/api/v1/languages') do |res|
-      Oj.load(res.body_with_limit).languages.map { |language| language['code'] }
-    end
-  end
-
-  private
-
-  def request(verb, path, **options)
-    req = Request.new(verb, "#{@base_url}#{path}", **options)
-    req.add_headers('Content-Type': 'application/json')
-    req.perform do |res|
+    request(text, source_language, target_language).perform do |res|
       case res.code
       when 429
         raise TooManyRequestsError
       when 403
         raise QuotaExceededError
       when 200...300
-        yield res
+        transform_response(res.body_with_limit, source_language)
       else
         raise UnexpectedResponseError
       end
     end
+  end
+
+  private
+
+  def request(text, source_language, target_language)
+    Request.new(:get, "#{@base_url}/api/v1/#{source_language}/#{target_language}/#{text}")
   end
 
   def transform_response(str, source_language)
