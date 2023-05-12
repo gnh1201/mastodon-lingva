@@ -26,7 +26,7 @@ class TranslationService::LingvaTranslate < TranslationService
   private
 
   def request(text, source_language, target_language)
-    Request.new(:get, "#{@base_url}/api/v1/#{source_language}/#{target_language}/#{text}")
+    Request.new(:get, "#{@base_url}/api/v1/#{source_language}/#{target_language}/#{CGI::escape(text)}")
   end
 
   def transform_response(str, source_language)
