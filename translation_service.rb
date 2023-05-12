@@ -20,7 +20,7 @@ class TranslationService
   end
 
   def self.configured?
-    ENV['DEEPL_API_KEY'].present? || ENV['LIBRE_TRANSLATE_ENDPOINT'].present?
+    ENV['DEEPL_API_KEY'].present? || ENV['LIBRE_TRANSLATE_ENDPOINT'].present? || ENV['LINGVA_TRANSLATE_ENDPOINT'].present?
   end
 
   def languages
