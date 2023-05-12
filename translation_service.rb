@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# for Mastodon 4.0.2
 
 class TranslationService
   class Error < StandardError; end
@@ -21,10 +22,6 @@ class TranslationService
 
   def self.configured?
     ENV['DEEPL_API_KEY'].present? || ENV['LIBRE_TRANSLATE_ENDPOINT'].present? || ENV['LINGVA_TRANSLATE_ENDPOINT'].present?
-  end
-
-  def languages
-    {}
   end
 
   def translate(_text, _source_language, _target_language)
