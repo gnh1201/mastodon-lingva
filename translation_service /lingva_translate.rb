@@ -8,7 +8,7 @@ class TranslationService::LingvaTranslate < TranslationService
   end
 
   def translate(text, source_language, target_language)
-    request(:get, '/api/v1/#{source_language}/#{target_language}/#{text}') do |res|
+    request(:get, "/api/v1/#{source_language}/#{target_language}/#{text}") do |res|
       transform_response(res.body_with_limit, source_language)
     end
   end
