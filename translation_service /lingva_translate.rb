@@ -22,7 +22,7 @@ class TranslationService::LingvaTranslate < TranslationService
   private
 
   def request(verb, path, **options)
-    req = Request.new(verb, "#{@base_url}#{path}", allow_local: true, **options)
+    req = Request.new(verb, "#{@base_url}#{path}", **options)
     req.add_headers('Content-Type': 'application/json')
     req.perform do |res|
       case res.code
