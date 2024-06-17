@@ -5,11 +5,11 @@ import traceback
 import json
 import re
 from flask import Flask, request, jsonify
-from pylingva import pylingva
+from pylingva import pylingva  # https://git.catswords.net/gnh1201/pylingva
 
 app = Flask(__name__)
 
-trans = pylingva("https://translate.catswords.net")
+trans = pylingva()
 
 HTML_TAGS_PATTERN = re.compile('<.*?>')
 URL_PATTERN = re.compile(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
