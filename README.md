@@ -2,7 +2,7 @@
 Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
 
 ## Quick start
-1. Install `flask`
+1. Install the `flask` package
    ```
    pip install flask
    ```
@@ -15,7 +15,7 @@ Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
 
 3. Add lines to `.env.production`
    ```
-   LIBRE_TRANSLATE_ENDPOINT=https://translation-api.catswords.net   # YOUR API URL
+   LIBRE_TRANSLATE_ENDPOINT=https://translation-api.example.org   # YOUR API URL
    LIBRE_TRANSLATE_API_KEY=true
    ```
 
