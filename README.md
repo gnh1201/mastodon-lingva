@@ -19,7 +19,7 @@ Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
    LIBRE_TRANSLATE_API_KEY=true
    ```
 
-3. Run mastodon-lingva
+3. Run mastodon-lingva (Or use `mastodon-lingva.service`)
    ```
    python3 server.py &
    ```
