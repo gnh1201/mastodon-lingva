@@ -1,0 +1,14 @@
+[Unit]
+Description=Lingva Translate for Mastodon
+Documentation=https://github.com/gnh1201/topic-activitypub
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/mastodon-lingva
+ExecStart=/usr/bin/python3 /opt/mastodon-lingva/server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
