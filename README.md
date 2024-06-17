@@ -16,6 +16,10 @@ Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
 
 3. Restart all related processes
 
+## Requirements
+* pylingva (modified version): https://git.catswords.net/gnh1201/pylingva
+* Lingva Translate: https://github.com/thedaviddelta/lingva-translate
+
 ## Contact me
 * ActivityPub [@gnh1201@catswords.social](https://catswords.social/@gnh1201)
 * abuse@catswords.net
