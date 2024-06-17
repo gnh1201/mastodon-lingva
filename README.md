@@ -16,6 +16,19 @@ Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
 
 3. Restart all related processes
 
+## How to test?
+
+### HTML FormData
+
+```bash
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'q=hello world&source=en&target=ko' http://localhost:5000/translate
+```
+
+### JSON
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"q":["hello world"],"source":"en","target":"ko"}' http://localhost:5000/translate
+```
+
 ## Requirements
 * pylingva (modified version): https://git.catswords.net/gnh1201/pylingva
 * Lingva Translate: https://github.com/thedaviddelta/lingva-translate
