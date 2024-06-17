@@ -2,19 +2,29 @@
 Lingva Translate Gateway for Mastodon (LibreTranslate API compatible)
 
 ## Quick start
-1 Install the modified `pylingva`
-  ```
-  git clone https://git.catswords.net/gnh1201/pylingva && cd pylingva
-  pip install .
-  ```
+1. Install `flask`
+   ```
+   pip install flask
+   ```
 
-2. Add lines to .env.production
-  ```
-  LIBRE_TRANSLATE_ENDPOINT=https://translation-api.catswords.net   # YOUR API URL
-  LIBRE_TRANSLATE_API_KEY=true
-  ```
+2. Install the modified `pylingva`
+   ```
+   git clone https://git.catswords.net/gnh1201/pylingva && cd pylingva
+   pip install .
+   ```
 
-3. Restart all related processes
+3. Add lines to `.env.production`
+   ```
+   LIBRE_TRANSLATE_ENDPOINT=https://translation-api.catswords.net   # YOUR API URL
+   LIBRE_TRANSLATE_API_KEY=true
+   ```
+
+3. Run mastodon-lingva
+   ```
+   python3 server.py &
+   ```
+
+4. Restart all related processes
 
 ## How to test?
 
